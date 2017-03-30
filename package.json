@@ -1,0 +1,43 @@
+{
+  "name": "node-boilerplate",
+  "version": "1.0.0",
+  "description": "Node JS Boilerplate for AWS Lambda",
+  "main": "dist/index.js",
+  "dependencies": {
+    "jest-cli": "^19.0.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-latest": "^6.24.0",
+    "jest": "^19.0.2",
+    "watch": "^1.0.2"
+  },
+  "scripts": {
+    "build": "babel src -d build",
+    "dev": "watch 'npm run build' src",
+    "test": "jest",
+    "test:watch": "npm test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dipsa/node-boilerplate.git"
+  },
+  "keywords": [
+    "nodejs",
+    "boilerplate",
+    "aws",
+    "lambda"
+  ],
+  "author": "pathumathukorala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dipsa/node-boilerplate/issues"
+  },
+  "homepage": "https://github.com/dipsa/node-boilerplate#readme",
+  "babel": {
+    "presets": ["latest"]
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
