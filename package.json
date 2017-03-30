@@ -9,15 +9,20 @@
   "devDependencies": {
     "babel-cli": "^6.24.0",
     "babel-preset-latest": "^6.24.0",
+    "gulp": "^3.9.1",
+    "gulp-install": "^1.1.0",
+    "gulp-zip": "^4.0.0",
     "jest": "^19.0.2",
-    "watch": "^1.0.2"
+    "watch": "^1.0.2",
+    "yargs": "^7.0.2"
   },
   "scripts": {
     "build": "babel src -d build",
     "dev": "watch 'npm run build' src",
     "test": "jest",
     "test:watch": "npm test -- --watch",
-    "deploy": "babel src -d $GOLEM_LAMBDA_DEST"
+    "deploy": "babel src -d $GOLEM_LAMBDA_DEST",
+    "deploy-artifact": "babel src -d build && gulp && gulp copy-artifact --D $GOLEM_LAMBDA_DEST"
   },
   "repository": {
     "type": "git",
@@ -36,7 +41,9 @@
   },
   "homepage": "https://github.com/dipsa/node-boilerplate#readme",
   "babel": {
-    "presets": ["latest"]
+    "presets": [
+      "latest"
+    ]
   },
   "jest": {
     "testEnvironment": "node"
