@@ -16,7 +16,8 @@
     "build": "babel src -d build",
     "dev": "watch 'npm run build' src",
     "test": "jest",
-    "test:watch": "npm test -- --watch"
+    "test:watch": "npm test -- --watch",
+    "deploy": "babel src -d $GOLEM_LAMBDA_DEST"
   },
   "repository": {
     "type": "git",
