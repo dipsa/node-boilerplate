@@ -51,10 +51,12 @@ $ npm run test:watch
 $ npm run deploy $GOLEM_LAMBDA_DEST {destination_path}
 ```
 
+The source files should be available in the mentioned path.
+
 ## If you need complete artifact compiled with all the dependancies
 
 ```shell
 $ npm run deploy-artifact $GOLEM_LAMBDA_DEST {destination_path}
 ```
 
-Please note that your artifact will be a zip file with the same name as what you have in your package.json -> name attribute. So use that name in your metadata.json file as the payload.
+Please note that your artifact will be a zip file with the same name as what you have in your package.json -> name attribute, and it should be available in the given path. So use that name in your metadata.json file as the payload.
