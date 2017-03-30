@@ -57,4 +57,4 @@ $ npm run deploy $GOLEM_LAMBDA_DEST {destination_path}
 $ npm run deploy-artifact $GOLEM_LAMBDA_DEST {destination_path}
 ```
 
-Please note that your artifact will be in the same name as what you have in your package.json -> name.
+Please note that your artifact will be a zip file with the same name as what you have in your package.json -> name attribute. So use that name in your metadata.json file as the payload.
