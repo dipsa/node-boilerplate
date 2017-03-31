@@ -22,7 +22,7 @@
     "dev": "watch 'npm run build' src",
     "test": "jest",
     "test:watch": "npm test -- --watch",
-    "deploy": "babel src -d build && gulp && gulp change-metadata", "__comment": "example",
+    "deploy": "babel src -d build && gulp && gulp change-metadata",
     "deploy-src": "babel src -d $GOLEM_LAMBDA_DEST",
     "deploy-artifact": "babel src -d build && gulp && gulp copy-artifact --D $GOLEM_LAMBDA_DEST"
   },
