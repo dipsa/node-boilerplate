@@ -45,11 +45,13 @@ $ npm run test:watch
 
 # build for golem deploy
 
-## If you need to create a zip file of your work and refer that as the Payload for golem. This will create a local metadata.json file with the packagename.
+## If you need to create a zip file of your work and refer that as the Payload for golem.
 
 ```shell
 $ npm run deploy
 ```
+
+This will create a local metadata.json file with the packagename.
 
 ## if you need the compiled source only
 
