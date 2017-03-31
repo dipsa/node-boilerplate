@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const install = require('gulp-install');
 const zip = require('gulp-zip');
+const change = require('gulp-change');
 
 const argv = require('yargs').argv;
 const _D = argv.D;
@@ -24,5 +25,11 @@ gulp.task('copy-artifact', () => {
   return gulp.src(`./dist/${buildname}.zip`)
       .pipe(gulp.dest(`./${_D}`));
 });
+
+gulp.task('change-metadata', () => {
+  return gulp.src('./meta/metadata.json')
+      .pipe(change((content) => { return content.replace(/PACKAGENAME/g, buildname)}))
+      .pipe(gulp.dest('./'));
+})
 
 gulp.task('default', ['install-dependancies', 'build-zip']);
