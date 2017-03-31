@@ -4,7 +4,6 @@
   "description": "Node JS Boilerplate for AWS Lambda",
   "main": "dist/index.js",
   "dependencies": {
-    "jest-cli": "^19.0.2"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
@@ -15,7 +14,8 @@
     "gulp-zip": "^4.0.0",
     "jest": "^19.0.2",
     "watch": "^1.0.2",
-    "yargs": "^7.0.2"
+    "yargs": "^7.0.2",
+    "jest-cli": "^19.0.2"
   },
   "scripts": {
     "build": "babel src -d build",

@@ -16,7 +16,7 @@ gulp.task('install-dependancies', () => {
 });
 
 gulp.task('build-zip', () => {
-  return gulp.src('./build/**')
+  return gulp.src('./build/**/**')
       .pipe(zip(`${buildname}.zip`))
       .pipe(gulp.dest('./dist'));
 });
