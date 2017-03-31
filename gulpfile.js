@@ -11,12 +11,12 @@ const buildname = (package.name).replace(/[^A-Za-z0-9_-]/g, '_');
 
 gulp.task('install-dependancies', () => {
   return gulp.src('./package.json')
-      .pipe(gulp.dest('./build'))
+      .pipe(gulp.dest(`./${_D}`))
       .pipe(install({ production: true }));
 });
 
 gulp.task('build-zip', () => {
-  return gulp.src('./build/**/**')
+  return gulp.src('./build/**/*')
       .pipe(zip(`${buildname}.zip`))
       .pipe(gulp.dest('./dist'));
 });

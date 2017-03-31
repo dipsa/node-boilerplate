@@ -4,6 +4,7 @@
   "description": "Node JS Boilerplate for AWS Lambda",
   "main": "dist/index.js",
   "dependencies": {
+    "bluebird": "^3.5.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
@@ -22,9 +23,9 @@
     "dev": "watch 'npm run build' src",
     "test": "jest",
     "test:watch": "npm test -- --watch",
-    "deploy": "babel src -d build && gulp && gulp change-metadata",
+    "deploy": "babel src -d build && gulp install-dependancies --D build && gulp build-zip && gulp change-metadata",
     "deploy-src": "babel src -d $GOLEM_LAMBDA_DEST",
-    "deploy-artifact": "babel src -d build && gulp && gulp copy-artifact --D $GOLEM_LAMBDA_DEST"
+    "deploy-artifact": "babel src -d build && gulp install-dependancies --D build && gulp build-zip && gulp copy-artifact --D $GOLEM_LAMBDA_DEST"
   },
   "repository": {
     "type": "git",
