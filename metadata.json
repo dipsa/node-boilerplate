@@ -1,0 +1,10 @@
+{
+    "AWSType": "function",
+    "Description": "example description of lambda",
+    "Handler": "index.handler",
+    "Role": "@role: lambda_basic_execution@",
+    "Timeout": 30,
+    "Memory": 128,
+    "Runtime": "nodejs4.3",
+    "payload": "file://@env: CWD@/build/payload.zip"
+}

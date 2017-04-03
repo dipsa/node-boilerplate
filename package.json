@@ -10,12 +10,10 @@
     "babel-cli": "^6.24.0",
     "babel-preset-latest": "^6.24.0",
     "gulp": "^3.9.1",
-    "gulp-change": "^1.0.0",
     "gulp-install": "^1.1.0",
     "gulp-zip": "^4.0.0",
     "jest": "^19.0.2",
     "watch": "^1.0.2",
-    "yargs": "^7.0.2",
     "jest-cli": "^19.0.2"
   },
   "scripts": {
@@ -23,9 +21,7 @@
     "dev": "watch 'npm run build' src",
     "test": "jest",
     "test:watch": "npm test -- --watch",
-    "deploy": "babel src -d build && gulp install-dependancies --D build && gulp build-zip && gulp change-metadata",
-    "deploy-src": "babel src -d $GOLEM_LAMBDA_DEST",
-    "deploy-artifact": "babel src -d build && gulp install-dependancies --D build && gulp build-zip && gulp copy-artifact --D $GOLEM_LAMBDA_DEST"
+    "make": "babel src -d build && gulp install-dependancies && gulp build-zip"
   },
   "repository": {
     "type": "git",

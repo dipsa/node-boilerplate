@@ -1,17 +1,15 @@
 # node-boilerplate
 
-This provides a boilerplate code for starting off with an AWS Lambda in Node JS.
+This provides a boilerplate code for starting off with an AWS Lambda in Node JS. The purpose of this is to provide a start-up code for writing a Lambda function using Node JS.
+
+The main advantages for devs using this:
+1. Avoid writing boilerplate code and can start off with development immediately
+2. Able to build with Babel with latest preset - ES6
+3. Write unit tests using Jest
+4. Watch for code changes and build / run unit tests simultaneously
+5. make the Golem deployable artifact with a single command with dependencies
 
 # usage
-
-```shell
-$ git clone git@github.com:dipsa/node-boilerplate.git
-```
-
-```shell
-$ cd node-boilerplate
-$ npm install
-```
 
 This project requires you to have gulp-cli installed, so if not
 
@@ -19,7 +17,21 @@ This project requires you to have gulp-cli installed, so if not
 $ [sudo] npm i -g gulp-cli
 ```
 
-# build
+Then to checkout
+
+```shell
+$ git clone git@github.com:dipsa/node-boilerplate.git
+```
+And install dependencies by
+
+```shell
+$ cd node-boilerplate
+$ npm install
+```
+
+This has few built-in functions
+
+# 1. compile
 
 ```shell
 $ npm run build
@@ -31,7 +43,7 @@ or, if you want to update your build folder while coding
 $ npm run build:watch
 ```
 
-# test
+# 2. test
 
 ```shell
 $ npm run test
@@ -43,28 +55,10 @@ or, if you want to watch tests for code changes
 $ npm run test:watch
 ```
 
-# build for golem deploy
+# 3. create the final artifact for Golem
 
-## If you need to create a zip file of your work and refer that as the Payload for golem.
-
-```shell
-$ npm run deploy
-```
-
-This will create a local metadata.json file with the packagename.
-
-## if you need the compiled source only
+This command compiles your code, then install the dependencies (production mode) and create a file called `payload.zip` inside a folder called build. This folder will not version controlled and is referred by the `metadata.json` file when Golem is trying to resolve the payload.
 
 ```shell
-$ npm run deploy-src $GOLEM_LAMBDA_DEST {destination_path}
+$ npm run make
 ```
-
-The source files should be available in the mentioned path.
-
-## If you need complete artifact compiled with all the dependancies
-
-```shell
-$ npm run deploy-artifact $GOLEM_LAMBDA_DEST {destination_path}
-```
-
-Please note that your artifact will be a zip file with the same name as what you have in your package.json -> name attribute, and it should be available in the given path. So use that name in your metadata.json file as the payload.
