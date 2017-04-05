@@ -22,7 +22,7 @@
     "dev": "watch 'npm run build' src",
     "test": "jest",
     "test:watch": "npm test -- --watch",
-    "make": "babel src -d build && gulp install-dependancies && gulp clean && gulp build-zip"
+    "make": "gulp clean && babel src -d build && gulp install-dependancies && gulp build-zip"
   },
   "repository": {
     "type": "git",

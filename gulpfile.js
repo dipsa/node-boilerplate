@@ -4,7 +4,7 @@ const zip = require('gulp-zip');
 const clean = require('gulp-clean');
 
 gulp.task('clean', () => {
-  return gulp.src('./build/payload.zip', { read: false })
+  return gulp.src('./build/*', { read: false })
       .pipe(clean());
 });
 
