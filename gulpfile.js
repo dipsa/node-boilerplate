@@ -1,7 +1,12 @@
 const gulp = require('gulp');
 const install = require('gulp-install');
 const zip = require('gulp-zip');
+const clean = require('gulp-clean');
 
+gulp.task('clean', () => {
+  return gulp.src('./build/payload.zip', { read: false })
+      .pipe(clean());
+});
 
 gulp.task('install-dependancies', () => {
   return gulp.src('./package.json')

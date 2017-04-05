@@ -10,18 +10,19 @@
     "babel-cli": "^6.24.0",
     "babel-preset-latest": "^6.24.0",
     "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
     "gulp-install": "^1.1.0",
     "gulp-zip": "^4.0.0",
     "jest": "^19.0.2",
-    "watch": "^1.0.2",
-    "jest-cli": "^19.0.2"
+    "jest-cli": "^19.0.2",
+    "watch": "^1.0.2"
   },
   "scripts": {
     "build": "babel src -d build",
     "dev": "watch 'npm run build' src",
     "test": "jest",
     "test:watch": "npm test -- --watch",
-    "make": "babel src -d build && gulp install-dependancies && gulp build-zip"
+    "make": "babel src -d build && gulp install-dependancies && gulp clean && gulp build-zip"
   },
   "repository": {
     "type": "git",
