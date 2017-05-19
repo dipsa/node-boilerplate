@@ -9,18 +9,20 @@
   "devDependencies": {
     "babel-cli": "^6.24.0",
     "babel-preset-latest": "^6.24.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-install": "^1.1.0",
     "gulp-zip": "^4.0.0",
-    "jest": "^19.0.2",
-    "jest-cli": "^19.0.2",
+    "lambda-local": "^1.4.2",
+    "mocha": "^3.2.0",
     "watch": "^1.0.2"
   },
   "scripts": {
     "build": "babel src -d build",
     "dev": "watch 'npm run build' src",
-    "test": "jest",
+    "test": "mocha --compilers js:babel-core/register",
     "test:watch": "npm test -- --watch",
     "make": "gulp clean && babel src -d build && gulp install-dependancies && gulp build-zip"
   },
@@ -44,8 +46,5 @@
     "presets": [
       "latest"
     ]
-  },
-  "jest": {
-    "testEnvironment": "node"
   }
 }
