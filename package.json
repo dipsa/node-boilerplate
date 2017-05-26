@@ -24,7 +24,7 @@
     "dev": "watch 'npm run build' src",
     "test": "mocha --compilers js:babel-core/register",
     "test:watch": "npm test -- --watch",
-    "make": "gulp clean && babel src -d build && gulp install-dependancies && gulp build-zip"
+    "make": "npm i && gulp clean && babel src -d build && gulp install-dependancies && gulp build-zip"
   },
   "repository": {
     "type": "git",
