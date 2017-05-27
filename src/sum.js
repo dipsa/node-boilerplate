@@ -1,3 +1,5 @@
 module.exports = (a, b) => {
-  return a+b;
+  return new Promise(resolve => {
+    resolve(a+b);
+  });
 }
