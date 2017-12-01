@@ -56,7 +56,13 @@ or, if you want to watch tests for code changes
 $ npm run test:watch
 ```
 
-# 3. create the final artifact for Golem
+# 3. execute local
+
+```shell
+$ npm run execlocal
+```
+
+# 4. create the final artifact for Golem
 
 This command resolves all dev dependancies required for build and test, then compiles your code, install the dependencies (production mode) and create a file called `payload.zip` inside a folder called *build*. This folder will not version controlled and is referred by the `metadata.json` file when Golem is trying to resolve the payload.
 This `npm run make` command can be embedded in `setup.py` file inside the lambda, so that everytime golem takes over, it knows that the artifact is ready.
